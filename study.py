@@ -81,3 +81,34 @@ t2.join()
 end = time.time()
 
 print('Time taken in seconds -', end - start)
+
+
+str1 = "Hello"
+str2 = "World"
+
+start = time.time()
+str3 = str1 + str2
+end = time.time()
+print('StrSum Time taken in seconds -', end - start)
+
+# join은 iterable한 객체의 문자열을 하나로 합친다. 앞에 오는 문자가 구분자가 된다.
+list_1 = [str1, str2]
+start = time.time()
+str4 = "".join(list_1)
+end = time.time()
+print('StrJoinTime taken in seconds -', end - start)
+
+start1 = time.time()
+for x in range(10000000):
+    dog1 = ' and '.join(['spam', 'eggs', 'spam', 'spam', 'eggs', 'spam','spam', 'eggs', 'spam', 'spam', 'eggs', 'spam'])
+
+end1 = time.time()
+print("Time to run Joiner = ", end1 - start1, "seconds")
+
+
+start2 = time.time()
+for x in range(10000000):
+    dog2 = 'spam'+' and '+'eggs'+' and '+'spam'+' and '+'spam'+' and '+'eggs'+' and '+'spam'+' and '+'spam'+' and '+'eggs'+' and '+'spam'+' and '+'spam'+' and '+'eggs'+' and '+'spam'
+
+end2 = time.time()
+print("Time to run + = ", end2 - start2, "seconds")
