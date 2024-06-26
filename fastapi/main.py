@@ -1,8 +1,11 @@
 from typing import Union
-
+from dotenv import load_dotenv
 from fastapi import FastAPI
 
 app = FastAPI()
+
+load_dotenv()
+DATABASE_URL = os.getenv('FLASK_DATABASE_URL')
 
 
 @app.get("/")
